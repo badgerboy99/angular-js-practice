@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="myFoodApp">
   <head>
     <title>Releasethebadgers Angular JS Practice</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app/lib/angular.min.js"></script>
+    <script src="app/app.js"></script>
   </head>
   <body>
 
@@ -13,12 +14,23 @@
 
   		<p>You like {{foods[1]}}, and you also like {{foods[3]}}.</p>
 
-  		<p class="{{color}}">I should be red text!</p> <!-- this doesn't work! -->
+  		<p class="{{color}}">I should be red text!</p> <!--this doesn't work! -->
 
   		<ul>
   			<li ng-repeat="food in foods">{{food}}</li>
   		</ul>
   			
+	</div>
+
+	<div ng-controller="foodController">
+
+		<p>{{message}}</p>
+
+		<ul>
+  			<li ng-repeat="food in foods">{{food}}</li>
+  		</ul>
+		
+
 	</div>
 
   </body>
