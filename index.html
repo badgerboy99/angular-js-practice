@@ -7,11 +7,17 @@
   </head>
   <body>
 
-  	<div ng-init="food=['aubergine', 'kumquat', 	'artichoke', 'pomegranate']">
-		<input type="text" ng-model="favFood" placeholder="enter your favourite food"/>
-  		<p>You like {{food[1]}}, and you also like {{food[3]}}.</p>
+  	<div ng-init="foods=['aubergine', 'kumquat', 'artichoke', 'pomegranate']">
 
-  		<p class="{{color}}">I am red text!</p> <!-- this doesn't work! -->
+		<input type="text" ng-model="favFood" placeholder="enter your favourite food"/>
+
+  		<p>You like {{foods[1]}}, and you also like {{foods[3]}}.</p>
+
+  		<p class="{{color}}">I should be red text!</p> <!-- this doesn't work! -->
+
+  		<ul>
+  			<li ng-repeat="food in foods">{{food}}</li>
+  		</ul>
   			
 	</div>
 
