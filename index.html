@@ -5,8 +5,15 @@
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app/lib/angular.min.js"></script>
   </head>
-  <body ng-init="food=['aubergine', 'kumquat', 'artichoke', 'pomegranate']">
-  	<!--<input type="text" ng-model="favFood" placeholder="enter your favourite food"/> -->
-  	<p>You like {{food[1]}} and you also like {{food[3]}}</p>
+  <body>
+
+  	<div ng-init="food=['aubergine', 'kumquat', 	'artichoke', 'pomegranate']">
+		<input type="text" ng-model="favFood" placeholder="enter your favourite food"/>
+  		<p>You like {{food[1]}}, and you also like {{food[3]}}.</p>
+
+  		<p class="{{color}}">I am red text!</p> <!-- this doesn't work! -->
+  			
+	</div>
+
   </body>
 </html>
