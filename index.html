@@ -26,11 +26,14 @@
 
 		<p>{{message}}</p>
 
+		<input type="text" ng-model = "search">
+		This currently seems to search in colour attribute as well as name :(
 		<ul>
-  			<li ng-repeat="food in foods">{{food}}</li>
+  			<li ng-repeat="food in foods | orderBy: 'name' | filter: search">{{food.name}} - {{food.kg | currency: '£'}}/Kg
+  			</li>
   		</ul>
 		
-
+ 
 	</div>
 
   </body>
