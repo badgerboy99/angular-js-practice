@@ -35,27 +35,31 @@ myFoodApp.controller('foodController', ['$scope', function($scope){
 
 		{
 			name: "Aubergine",
-			colour: 'purple',
+			colour: 'black',
 			kg: 2.4,
-			available: true
+			available: true,
+			thumb: "content/img/aubergine.jpeg"
 		},
 		{
 			name: 'Kumquat',
 			colour: 'orange',
 			kg: 2.95,
-			available: true
+			available: true,
+			thumb: "content/img/kumquat.jpeg"
 		},
 		{
 			name: 'Artichoke',
 			colour: 'green',
 			kg: 3.89,
-			available: true
+			available: true,
+			thumb: "content/img/artichoke.jpeg"
 		},
 		{
 			name: 'Pomegranate',
 			colour: 'red',
 			kg: 3.6,
-			available: true
+			available: true,
+			thumb: "content/img/pomegranate.jpg"
 		},
 	];
 		
