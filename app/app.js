@@ -17,6 +17,20 @@ myFoodApp.controller('foodController', ['$scope', function($scope){
 		$scope.foods.splice(removedFood, 1)
 	}
 
+	$scope.addFood = function(){
+		$scope.foods.push({
+			name: $scope.newfood.food,
+			colour: $scope.newfood.colour,
+			kg: $scope.newfood.kg,
+			available: true
+		});
+
+		$scope.newfood.food = [];
+		$scope.newfood.colour = [];
+		$scope.newfood.kg = [];
+
+	};
+
 	$scope.foods = [
 
 		{

@@ -40,6 +40,14 @@
   				<span class="belt" style="background: {{food.colour}}">My colour is {{food.colour}}</span>
   				</li>
   			</ul>
+
+  			<form ng-submit ="addFood()">
+  				<input type="text" placeholder="Name" ng-model="newfood.food">
+  				<input type="text" placeholder="Colour" ng-model="newfood.colour">
+  				<input type="text" placeholder="Kg" ng-model="newfood.kg">
+  				<input type="submit" value="Add new food">
+
+  			</form>
 		
  
 		</div>
