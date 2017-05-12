@@ -1,4 +1,23 @@
-var myFoodApp = angular.module('myFoodApp', []);
+var myFoodApp = angular.module('myFoodApp', ['ngRoute']);
+
+myFoodApp.config (['$routeProvider', function($routeProvider){
+
+	$routeProvider
+		.when('/home', {
+			templateUrl: 'views/home.html'
+		})	
+		.when('/directory', {
+			templateUrl: 'views/directory.html',
+			controller: 'foodController'
+			})
+		.otherwise({
+			redirectTo: '/home'
+			});
+
+
+}]);
+
+	
 
 //myFoodApp.config(function{
 

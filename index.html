@@ -4,58 +4,24 @@
     <title>Releasethebadgers Angular JS Practice</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app/lib/angular.min.js"></script>
+    <script src="app/lib/angular-route.min.js"></script>
     <script src="app/app.js"></script>
   </head>
   <body>
 
-  	<div ng-init="foods=['aubergine', 'kumquat', 'artichoke', 'pomegranate']">
+  	<!--<div ng-init="foods=['aubergine', 'kumquat', 'artichoke', 'pomegranate']">
 
 		<input type="text" ng-model="favFood" placeholder="enter your favourite food"/>
 
   		<p>You like {{foods[1]}}, and you also like {{foods[3]}}.</p>
 
-  		<p class="{{color}}">I should be red text (but something's wrong here)!</p> <!--this doesn't work! -->
+  		<p class="{{color}}">I should be red text (but something's wrong here)!</p> this doesn't work! 
 
   		<ul>
   			<li ng-repeat="food in foods">{{food}}</li>
-  		</ul>
-  			
-	</div>
-
-	<header ng-include="'header.html'"></header>
-
-	<div class="content">
-		<div ng-controller="foodController">
-
-			<p>{{message}} (this is my message from the scope)</p>
-
-			<button ng-click="order = 'colour'">Order by colour</button>
-			<button ng-click="order = 'name'">Order by name</button>
-
-			<input type="text" ng-model = "search" placeholder="Search for a food">
-			(This currently seems to search in colour attribute as well as name)
-			<ul>
-  				<li ng-repeat="food in foods | orderBy: order | filter: search" ng-show ="food.available">
-
-  				<img ng-src="{{food.thumb}}" style ="width: 50px; margin-top: -10px; margin-right: 20px;float: left;" ng-show="food.thumb"/>
-
-  				<h3>{{food.name}} - {{food.kg | currency: '£'}}/Kg</h3>
-  				<div class="remove" ng-click="removeFood(food)">x</div>
-  				<span class="belt" style="background: {{food.colour}}">My colour is {{food.colour}}</span>
-  				</li>
-  			</ul>
-
-  			<form ng-submit ="addFood()">
-  				<input type="text" placeholder="Name" ng-model="newfood.food">
-  				<input type="text" placeholder="Colour" ng-model="newfood.colour">
-  				<input type="text" placeholder="Kg" ng-model="newfood.kg">
-  				<input type="submit" value="Add new food">
-
-  			</form>
-		
- 
-		</div>
-	</div>
+  		</ul> -->
+  	<header ng-include="'header.html'"></header>		
+	<main ng-view=""></main>
 
   </body>
 </html>
