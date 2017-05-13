@@ -47,7 +47,8 @@ h1,h2,h3{
 }
 
 #menu-bar a{
-  color: #fff
+  color: #fff;
+  text-decoration: none;
 }
 
 main{
@@ -59,6 +60,7 @@ main{
 
 .content{
   padding: 20px;
+  overflow: hidden;
 }
 
 .content button,
@@ -123,4 +125,43 @@ main{
   color: crimson;
   cursor: pointer;
   margin-left: 10px;
+}
+
+/*------------------ANIMATIONS -------------------------------------------------------*/
+
+/* The starting CSS styles for the enter animation */
+main.ng-enter {
+  transition:0.7s linear all;
+  opacity:0;
+}
+/* The finishing CSS styles for the enter animation */
+main.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+#food-list li.ng-enter {   /* list items swipe-up/fade-in when added*/
+  transition: 0.5s linear all;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+#food-list li.ng-enter.ng-enter-active  {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#food-list li.ng-leave {  /* list items ping off to left when deleted */
+  transition: .5s linear all;
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+#food-list li.ng-leave.ng-leave-active  {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+#food-list li.ng-leave-stagger {   /* list items ping off one-by-one when 'remove all' is clicked */
+  transition-delay: 0.2s;
+  transition-duration: 0;
 }

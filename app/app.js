@@ -1,4 +1,4 @@
-var myFoodApp = angular.module('myFoodApp', ['ngRoute']);
+var myFoodApp = angular.module('myFoodApp', ['ngRoute','ngAnimate']);
 
 myFoodApp.config (['$routeProvider', function($routeProvider){
 
@@ -37,6 +37,8 @@ myFoodApp.directive('randomFood', [function(){
 			title: '='
 		},
 		templateUrl: 'views/random.html',
+		transclude: true,
+		replace: true,
 		//template: '<img ng-src="{{foods[random].thumb}}">',		
 		controller: function($scope){
 			$scope.random = Math.floor(Math.random() *4);
@@ -69,6 +71,9 @@ myFoodApp.controller('foodController', ['$scope', '$http', function($scope, $htt
 
 	};
 
+	$scope.removeAll = function(){
+		$scope.foods = [];
+	};
 	
 	$http.get('data/foods.json').then(function(response){
 		$scope.foods = response.data;
