@@ -4,7 +4,8 @@ myFoodApp.config (['$routeProvider', function($routeProvider){
 
 	$routeProvider
 		.when('/home', {
-			templateUrl: 'views/home.html'
+			templateUrl: 'views/home.html',
+			controller: 'foodController'
 		})	
 		.when('/directory', {
 			templateUrl: 'views/directory.html',
@@ -26,6 +27,25 @@ myFoodApp.config (['$routeProvider', function($routeProvider){
 //myFoodApp.run(function{
 
 //});
+
+myFoodApp.directive('randomFood', [function(){
+
+	return {
+		restrict: 'E',
+		scope: {       //'isolate' scope
+			foods: '=',
+			title: '='
+		},
+		templateUrl: 'views/random.html',
+		//template: '<img ng-src="{{foods[random].thumb}}">',		
+		controller: function($scope){
+			$scope.random = Math.floor(Math.random() *4);
+		}
+
+		};
+
+	
+}]);
 
 myFoodApp.controller('foodController', ['$scope', '$http', function($scope, $http){
 
